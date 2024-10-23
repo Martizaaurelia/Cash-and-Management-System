@@ -87,7 +87,13 @@ for (int i = 1; i <= RowDataFundTransaction; i++) {
     WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Button_search'))
 	
     memindahkanDataKeExcel() 
-   
+  
+	
+	Stirng Hahah
+	
+	
+	
+	
 } 
 
 
