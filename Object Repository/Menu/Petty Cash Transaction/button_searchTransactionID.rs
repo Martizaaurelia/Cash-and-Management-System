@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_searchTransactionID</name>
+   <tag></tag>
+   <elementGuidId>0db060c9-e564-4a59-ae65-e708a05ab2ec</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//table[@id='tbl-pct-detail']/tbody/tr/td/div/span&#xd;
+</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>#btn-log-in</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>071d846b-24b6-44f7-be04-c8e7d8643fc1</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>btn btn-primary</value>
+      <webElementGuid>829c8599-bbf4-4908-abe0-db95849db651</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>btn-log-in</value>
+      <webElementGuid>3a1f99da-3cc0-4c89-9034-dd4d557d7641</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Login</value>
+      <webElementGuid>dfaf6f69-0506-4f90-919f-56568015ab90</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;btn-log-in&quot;)</value>
+      <webElementGuid>0bfaf934-fc26-423e-a4da-a6e6ab47862e</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>field_cabangMufnet</name>
+   <tag></tag>
+   <elementGuidId>558d3a37-4c70-40f0-bdc4-9a34062ba9ba</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id=&quot;cabang-mufnet-transaction&quot;]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <type>Main</type>
+      <value>//*[@id=&quot;cabang-mufnet-transaction&quot;]/option[2]</value>
+      <webElementGuid>a16a71dc-068f-4178-99f4-1e75d84bff17</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

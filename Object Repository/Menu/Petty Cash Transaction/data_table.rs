@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>data_table</name>
+   <tag></tag>
+   <elementGuidId>aee40875-aeac-4545-8351-88e34102e4f2</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//*[@id=&quot;tbl-pct-detail&quot;]/tbody/tr</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Petty Cash Transaction</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ddb66b4a-ee10-46b0-9e16-c71ef9069797</testCaseGuid>
+</TestCaseEntity>

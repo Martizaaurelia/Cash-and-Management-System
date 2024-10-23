@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>To do List Approval</name>
-   <tag></tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>64953389-d7ae-4d9a-a7a7-d23de52d1d8c</testCaseGuid>
-</TestCaseEntity>

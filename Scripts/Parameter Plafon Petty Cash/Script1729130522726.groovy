@@ -134,7 +134,7 @@ WebUI.click(findTestObject('Object Repository/LogOut/Header_logout'))
 
 WebUI.click(findTestObject('Object Repository/LogOut/Button_logout'))
 
-WebUI.callTestCase(findTestCase('Petty cash request'), [:], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('Petty Cash Request'), [:], FailureHandling.STOP_ON_FAILURE)
 
 def DataLocation(String Location) {
     String HasilLocation
