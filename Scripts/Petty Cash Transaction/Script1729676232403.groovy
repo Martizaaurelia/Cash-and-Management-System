@@ -22,12 +22,15 @@ import com.kms.katalon.core.testobject.ConditionType as ConditionType
 import java.util.Random as Random
 
 WebUI.openBrowser('http://cams-frontend-uat.apps.ocp4dev.muf.co.id')
+
 WebUI.maximizeWindow()
 
 TestData DataPettyCashTransaction = findTestData('Data Files/Petty Cash Transaction (1)')
+
 TestData DataLogin = findTestData('Data Files/Login')
 
 int RowDataLogin = DataLogin.getRowNumbers()
+
 int RowDataPettyCashTransaction = DataPettyCashTransaction.getRowNumbers()
 
 // Loop untuk login dan transaksi dari TestData
@@ -60,8 +63,6 @@ for (int i = 1; i <= RowDataPettyCashTransaction; i++) {
         WebUI.scrollToElement(findTestObject('Object Repository/Menu/Petty Cash Transaction/button_addDetail'), 5)
         
 		WebUI.click(findTestObject('Object Repository/Menu/Petty Cash Transaction/button_addDetail'))
-
-		//        WebUI.scrollToElement(findTestObject('Object Repository/Menu/Petty Cash Transaction/Petty Cash Transaction/data'), 5)
         
         // Pilih Transaction ID
         transaction.addProperty('xpath', ConditionType.EQUALS, '//*[@id="tbl-pct-detail"]/tbody/tr[' + j + ']/td[1]/div/span')
@@ -117,6 +118,7 @@ for (int i = 1; i <= RowDataPettyCashTransaction; i++) {
 		WebUI.click(findTestObject('Object Repository/Menu/Petty Cash Transaction/button_keMonitoringRequest'))
 		
 		WebUI.closeBrowser()
+		
         // Tidak ada error
     } else if (WebUI.verifyElementPresent(findTestObject('Object Repository/Menu/Petty Cash Transaction/Petty Cash Transaction/button_OK'), 5)) {
 		
@@ -128,3 +130,6 @@ for (int i = 1; i <= RowDataPettyCashTransaction; i++) {
     // Tutup browser setelah selesai
     WebUI.closeBrowser()
 }
+
+// Tutup browser setelah selesai
+WebUI.closeBrowser()
