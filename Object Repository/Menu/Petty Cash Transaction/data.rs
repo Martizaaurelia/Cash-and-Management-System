@@ -6,12 +6,11 @@
    <elementGuidId>8c869c94-b58c-4036-b430-e03049474d2b</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//*[@id=&quot;tbl-pct-detail&quot;]/tbody/tr</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//*[@id=&quot;tbl-pct-detail&quot;]</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
