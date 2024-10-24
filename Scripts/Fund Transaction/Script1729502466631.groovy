@@ -4,7 +4,8 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import javax.media.rtp.rtcp.SenderReport as SenderReport
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
@@ -42,6 +43,8 @@ int RowDataLogin = DataLogin.getRowNumbers()
 
 int RowDataFundTransaction = DataFundTransaction.getRowNumbers()
 
+String path = 'Data Upload\\Transaction Status.csv'
+
 for (int i = 1; i <= RowDataFundTransaction; i++) {
     WebUI.setText(findTestObject('Object Repository/Login/Field_Username'), DataLogin.getValue(1, 4))
 
@@ -50,52 +53,57 @@ for (int i = 1; i <= RowDataFundTransaction; i++) {
     WebUI.sendKeys(findTestObject('Login/Field_Password'), Keys.chord(Keys.ENTER))
 
     WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Menu_Fund Transaction'))
-
-    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Menu_Tab Export'))
-
-    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Checkbox_Transaction Type'))
-
-    WebUI.selectOptionByValue(findTestObject('Object Repository/Menu/Fund Transaction/Field_Sub Transaction Type'), SubTransactionType(
-            DataFundTransaction.getValue('Sub Transaction Type', i)), false)
-
-    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode Start Date'))
-
-    // untuk melakukan block character yang ada difield
-    String ScriptStartDate = ('var textSelector = document.querySelector(\'input#start-date-history-post-ft\') ;' + 'textSelector.focus();') + 
-    'textSelector.select();'
-
-    WebUI.executeJavaScript(ScriptStartDate, null)
-
-    WebUI.sendKeys(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode Start Date'), Keys.chord(Keys.BACK_SPACE))
-
-    WebUI.setText(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode Start Date'), DataFundTransaction.getValue(
-            'Periode Start Date', i))
-
-    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode End Date'))
-
-    // untuk melakukan block character yang ada difield
-    String ScriptEndDate = ('var textSelector = document.querySelector(\'input#end-date-history-post-ft\') ;' + 'textSelector.focus();') + 
-    'textSelector.select();'
-
-    WebUI.executeJavaScript(ScriptEndDate, null)
-
-    WebUI.sendKeys(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode End Date'), Keys.chord(Keys.BACK_SPACE))
-
-    WebUI.setText(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode End Date'), DataFundTransaction.getValue(
-            'Periode End Date', i))
-
-    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Button_search'))
+//
+//    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Menu_Tab Export'))
+//
+//    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Checkbox_Transaction Type'))
+//
+//    WebUI.selectOptionByValue(findTestObject('Object Repository/Menu/Fund Transaction/Field_Sub Transaction Type'), SubTransactionType(
+//            DataFundTransaction.getValue('Sub Transaction Type', i)), false)
+//
+//    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode Start Date'))
+//
+//    // untuk melakukan block character yang ada difield
+//    String ScriptStartDate = ('var textSelector = document.querySelector(\'input#start-date-history-post-ft\') ;' + 'textSelector.focus();') + 
+//    'textSelector.select();'
+//
+//    WebUI.executeJavaScript(ScriptStartDate, null)
+//
+//    WebUI.sendKeys(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode Start Date'), Keys.chord(Keys.BACK_SPACE))
+//
+//    WebUI.setText(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode Start Date'), DataFundTransaction.getValue(
+//            'Periode Start Date', i))
+//
+//    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode End Date'))
+//
+//    // untuk melakukan block character yang ada difield
+//    String ScriptEndDate = ('var textSelector = document.querySelector(\'input#end-date-history-post-ft\') ;' + 'textSelector.focus();') + 
+//    'textSelector.select();'
+//
+//    WebUI.executeJavaScript(ScriptEndDate, null)
+//
+//    WebUI.sendKeys(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode End Date'), Keys.chord(Keys.BACK_SPACE))
+//
+//    WebUI.setText(findTestObject('Object Repository/Menu/Fund Transaction/Field_Periode End Date'), DataFundTransaction.getValue(
+//            'Periode End Date', i))
+//
+//    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Button_search'))
+//
+//    memindahkanDataKeExcel()
+//
+//    WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Checkbox_CheckTransaction'))
+//
+//	WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Button_Export To'))
 	
-    memindahkanDataKeExcel() 
-  
+	WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Menu_Tab Import'))
 	
-	Stirng Hahah
+	WebUI.uploadFile(findTestObject('Object Repository/Menu/Fund Transaction/Upload_Upload file Transaction'),RunConfiguration.getProjectDir()+ '/Data Upload/Transaction Status.csv')
 	
+	WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Button_Import To'))
 	
+	WebUI.click(findTestObject('Object Repository/Menu/Fund Transaction/Button_Yakin Konfirmasi'))
 	
-	
-} 
-
+}
 
 def SubTransactionType(String getSubTransactionType) {
     if (getSubTransactionType == 'ALL') {
@@ -107,8 +115,9 @@ def SubTransactionType(String getSubTransactionType) {
     }
 }
 
+
 def memindahkanDataKeExcel() {
-    int RefferenceNo = 0
+    int RefferenceNo = 2024060715369000001
 
     String GetDataTanggal
 
@@ -148,15 +157,17 @@ def memindahkanDataKeExcel() {
         int jumlahCell = tableCells.size()
 
         for (int j = 1; j < jumlahCell; j++) {
-             GetDataDocNumber = tableCells.get(3).getText()
+            GetDataDocNumber = tableCells.get(3).getText()
 
-             GetDataTanggal = tableCells.get(7).getText()
+            GetDataTanggal = tableCells.get(7).getText().replace('/','-')
 
-             GetDataDuit = tableCells.get(13).getText().replace(',', '')
+            GetDataDuit = tableCells.get(13).getText().replace(',', '')
         }
+		
+		RefferenceNo = RefferenceNo + i
         
         String csvLine = ((((((((((((((GetDataTanggal + ',') + RefferenceNo) + ',') + CredittedAccount) + ',') + DebittedAccount) + 
-        ',') + Remark) + ',') + GetDataDocNumber) + ',') + GetDataDuit) + ',') + SuccessfullorFail) + ','
+        ',') + Remark) + ',') + GetDataDocNumber) + ',') + 'IDR ' + GetDataDuit) + ',') + SuccessfullorFail) + ','
 
         writer.write(csvLine)
 
